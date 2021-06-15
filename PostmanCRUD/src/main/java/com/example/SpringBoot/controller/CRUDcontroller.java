@@ -36,6 +36,12 @@ public class CRUDcontroller {
 		return "Employee with " + empid + " is deleted";
 	}
 	
+	@DeleteMapping("/emp")
+	private String delAll() {
+		serv.deleteAllEmployees();
+		return "All employee details deleted";
+	}
+	
 	@PostMapping("/emp")
 	private Employee addEmployee(@RequestBody Employee obj) {
 		serv.addEmployee(obj);
